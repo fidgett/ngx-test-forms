@@ -1,0 +1,23 @@
+<p>form works!</p>
+
+<div *ngIf="form" [formGroup]="form" class="form">
+  <div class="fields">
+    <div class="field">
+      <div class="field_name">Name:</div>
+      <div class="field__value">
+        <app-form-item [formControlName]="'name'"></app-form-item>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field_name">Email:</div>
+      <div class="field__value">
+        <app-form-item [formControlName]="'email'"></app-form-item>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="result$ | async as result" class="result">
+    <pre>{{ result | json }}</pre>
+  </div>
+</div>
+
